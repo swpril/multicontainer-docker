@@ -16,6 +16,7 @@ after_success:
   - docker build -t "$DOCKER_ID"/multi-server ./server
   - docker build -t "$DOCKER_ID"/multi-worker ./worker
   - docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD" docker.io
+  - docker image ls
   - docker push "$DOCKER_ID"/multi-client:latest
   - docker push "$DOCKER_ID"/multi-nginx
   - docker push "$DOCKER_ID"/multi-server
